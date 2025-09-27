@@ -102,13 +102,41 @@ public class bai_tap {
         return kq;
     }
     }
+    //bai_tap_mang
+    
+    public static void duyet_mang(int[] a, int n)
+    {
+        int max = a[1];
+        int min = a[1];
+        int tong = 0;
+        int dem_chan = 0;
+        int dem_le = 0;
+        for (int  i  = 0; i<n; i++)
+        {
+            if (a[i]!=0)
+            {
+                if (a[i] % 2 == 0) dem_chan += 1;
+                else dem_le += 1;
+                
+            }
+            System.out.print(a[i]+" ");
+            tong = tong + a[i];
+            if (i!=0)
+            {
+                if (a[i] > max) max = a[i];
+                if (a[i] < min) min = a[i];
+            }
+            if (i == n-1) System.out.println();
+        }
+        System.out.println("max = "+max+"; min = "+min+"; so luong so chan: "+dem_chan+"; so luong so le: "+dem_le+"; tong= "+tong);
+    }
     public static void main(String[] abc)
     {
-        
+        int[] a = {1,2,3,5,22,14,87};  
         Scanner sc = new Scanner(System.in);
         System.out.print("nhap x vao: ");
         int x = sc.nextInt();
-        System.out.println(giai_thua_(x));;
+        duyet_mang(a, 7);
         sc.close();
     }
     
